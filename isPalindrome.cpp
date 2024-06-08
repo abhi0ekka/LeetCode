@@ -27,9 +27,9 @@ bool isPalindrome(int x)
     while(x>0)
     {
         rem=x%10;
-        pal=pal*10+rem;
-        if(pal<INT_MIN || pal>INT_MAX)
+        if(pal<INT_MIN/10 || pal>INT_MAX/10)
             return 0;
+        pal=pal*10 + rem;
         x=x/10;
     }
 
