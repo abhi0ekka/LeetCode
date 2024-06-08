@@ -2,6 +2,7 @@
 // Created by ABHISHEK EKKA on 09/06/24.
 //
 #include <iostream>
+#include <climits>
 using namespace std;
 
 bool isPalindrome(int);
@@ -27,6 +28,8 @@ bool isPalindrome(int x)
     {
         rem=x%10;
         pal=pal*10+rem;
+        if(pal<INT_MIN || pal>INT_MAX)
+            return 0;
         x=x/10;
     }
 
