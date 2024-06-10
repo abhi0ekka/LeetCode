@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-int romanCharIntoInt(char x)
+inline int romanCharIntoInt(char x)
 {
     switch (x)
     {
