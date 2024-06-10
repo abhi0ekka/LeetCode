@@ -20,12 +20,30 @@ int romanCharIntoInt(char x)
     }
 }
 
-int romanToInt(string s)
-{
+int romanToInt(string s) {
     int cur_val;
-    int pre_val=0;
-    for(char element : s)
-    {
+    int pre_val;
+    int ans = 0;
 
+    for (char element: s)
+    {
+        cur_val = romanCharIntoInt(element);
+        if (pre_val < cur_val)
+            ans += cur_val - 2*pre_val;
+        else
+            ans += cur_val;
+
+        pre_val = cur_val;
     }
+
+    return ans;
+}
+
+
+int main()
+{
+    string num;
+    cout<<"Enter the Number which you want to convert the Roman To Integer"<<endl;
+    cin>>num;
+    cout<<"The Answer is : "<<romanToInt(num);
 }
