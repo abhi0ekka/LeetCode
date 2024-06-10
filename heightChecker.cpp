@@ -15,26 +15,14 @@ int main()
 
 int heightChecker(const vector<int> &height)
 {
-    vector<int> comp=height;    //To create the copy of the Code
+    vector<int> temp=height;    //To create the copy of the Code
     int count=0;
 
-    for(int i=0;i<comp.size()-1;i++)
-    {
-        int min=i;
-        for(int j=i;j<comp.size();j++)
-        {
-            if(comp[min]>comp[j])
-            {
-                min=j;
-            }
-        }
-
-        swap(comp[i],comp[min]);
-    }
+    sort(temp.begin(),temp.end());
 
     for(int i=0;i<height.size();i++)
     {
-        if(height[i]!=comp[i])
+        if(height[i]!=temp[i])
             count++;
     }
     return count;
